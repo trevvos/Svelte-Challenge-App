@@ -40,12 +40,7 @@
 
 </script>
 
-<header class="header">
-    <div class="header__wrapper">
-        <h1>Svelte Challenge App</h1>
-        <a href="/candidate">Ver Detalhes do Candidato</a>
-    </div>
-</header>
+
 <section class="home">
     <div class="home__wrapper wrap">
         <Form on:formSubmitted={handleSubmit} on:finished={onFinished} />
@@ -62,11 +57,11 @@
 {#if $timerStore.showModalSuccess}
     <dialog id="my_modal_1" class="modal" open>
         <div class="modal-box">
-            <h3 class="font-bold text-lg">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
+            <h3 class="font-bold text-lg">Parabéns !</h3>
+            <p class="py-4">Desafio finalizado com sucesso!</p>
             <div class="modal-action">
                 <form method="dialog">
-                    <button class="btn">Close</button>
+                    <button class="btn">Fechar</button>
                 </form>
             </div>
         </div>
@@ -80,7 +75,7 @@
             <p class="py-4">Você não enviou o formulário dentro do tempo limite.</p>
             <div class="modal-action">
                 <form method="dialog">
-                    <button class="btn">Close</button>
+                    <button class="btn">Fechar</button>
                 </form>
             </div>
         </div>
@@ -116,31 +111,7 @@
         font-size: 3.5rem;
     }
 
-    .header{
-        background-color: var(--subtle);
-        padding: 20px;
+    .modal {
+        color: var(--black);
     }
-
-    .header__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        width: 500px;
-        justify-content: space-between;
-    }
-    h1{
-        font-size: 1.5rem;
-    }
-    a {
-        cursor: pointer;
-        background-color: var(--input);
-        padding: 20px;
-        border-radius: 6px;
-        transition: 250ms;
-    }
-    a:hover {
-        background-color: var(--subtle);
-    }
-
 </style>
