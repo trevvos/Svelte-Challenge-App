@@ -2,6 +2,7 @@
     import Form from '$lib/components/Form.svelte';
     import { timerStore } from '$lib/timerStore';
 
+
     let isChallengeStarted = false;
 
     const startTimer = () => {
@@ -21,6 +22,10 @@
 
         timerStore.update((state) => ({ ...state, timer: interval }));
     };
+
+    const restartTimer = () => {
+        location.reload();
+    }
 
     function onFinished() {
         stopTimer();
@@ -60,7 +65,7 @@
             <h3 class="font-bold text-lg">Parabéns !</h3>
             <p class="py-4">Desafio finalizado com sucesso!</p>
             <div class="modal-action">
-                <form method="dialog">
+                <form method="dialog" on:submit={restartTimer}>
                     <button class="btn">Fechar</button>
                 </form>
             </div>
@@ -74,7 +79,7 @@
             <h3 class="font-bold text-lg">Desafio finalizado com falha!</h3>
             <p class="py-4">Você não enviou o formulário dentro do tempo limite.</p>
             <div class="modal-action">
-                <form method="dialog">
+                <form method="dialog" on:submit={restartTimer}>
                     <button class="btn">Fechar</button>
                 </form>
             </div>
