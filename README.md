@@ -22,10 +22,3 @@ cd svelte-challenge-app
 npm install
 
 npm run dev
-
-Contribuições são bem-vindas! Por favor, leia CONTRIBUTING.md para obter detalhes sobre nosso código de conduta e o processo de envio de solicitações pull.
-
-Licença
-Este projeto é licenciado sob a MIT License.
-
-css
