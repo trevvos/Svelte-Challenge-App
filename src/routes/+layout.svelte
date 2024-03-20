@@ -1,9 +1,11 @@
 <script>
-	import '../global.css';
+	import Header from '$lib/components/Header.svelte';
+import '../global.css';
 </script>
 
 
 <div class="layout">
+	<Header />
 	<div class="main">
 		<slot />
 	</div>
