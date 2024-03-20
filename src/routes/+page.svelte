@@ -1,4 +1,3 @@
-<!-- Index.svelte -->
 <script lang="ts">
     import Form from '$lib/components/Form.svelte';
     import { timerStore } from '$lib/timerStore';
@@ -41,15 +40,24 @@
 
 </script>
 
-<h1>Página do Desafio</h1>
+<header class="header">
+    <div class="header__wrapper">
+        <h1>Svelte Challenge App</h1>
+        <a href="/candidate">Ver Detalhes do Candidato</a>
+    </div>
+</header>
+<section class="home">
+    <div class="home__wrapper wrap">
+        <Form on:formSubmitted={handleSubmit} on:finished={onFinished} />
+        <div class="temporizador">
+           
+            <span class="title__temporizador">Tempo restante</span>
+            <br /> 
+            <span class="counter__temporizador">{$timerStore.timeLeft}</span>
+        </div>
+    </div>
+</section>
 
-<a href="/candidate">Ver Detalhes do Candidato</a>
-
-<Form on:formSubmitted={handleSubmit} on:finished={onFinished} />
-
-<div class="text-center">
-    <p>Tempo restante: {$timerStore.timeLeft}</p>
-</div>
 
 {#if $timerStore.showModalSuccess}
     <dialog id="my_modal_1" class="modal" open>
@@ -78,3 +86,61 @@
         </div>
     </dialog>
 {/if}
+
+<style>
+    .home__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .temporizador {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 15px solid var(--subtle);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .title__temporizador {
+        font-size: 1.5rem;
+    }
+
+    .counter__temporizador {
+        font-size: 3.5rem;
+    }
+
+    .header{
+        background-color: var(--subtle);
+        padding: 20px;
+    }
+
+    .header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 500px;
+        justify-content: space-between;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    a {
+        cursor: pointer;
+        background-color: var(--input);
+        padding: 20px;
+        border-radius: 6px;
+        transition: 250ms;
+    }
+    a:hover {
+        background-color: var(--subtle);
+    }
+
+</style>

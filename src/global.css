@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #000000;
+    --black: #121212;
+    --white: #fff;
+    --brown: brown;
+    --subtle: rgba(228, 44, 44, 0.2);
+    --button: #2E0909;
+    --input: #231919;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Cabin', sans-serif;
+    background-color: var(--bg);
+    color: var(--white)
+    
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-underline-offset: 2px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: unset;
+  }
+
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+    /* Classes */
+.wrap {
+    width: 50%; 
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  input {
+    height: 35px;
+    border-radius: 6px;
+    padding: 15px;
+    color: var(--white);
+    width: 100%;
+    margin: 20px 0;
+    background-color: var(--input);
+
+  }

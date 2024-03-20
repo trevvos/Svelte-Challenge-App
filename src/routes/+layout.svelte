@@ -1,5 +1,18 @@
 <script>
-	import '../app.css';
+	import '../global.css';
 </script>
 
-<slot />
+
+<div class="layout">
+	<div class="main">
+		<slot />
+	</div>
+</div>
+
+<style>
+	.layout {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+</style>
